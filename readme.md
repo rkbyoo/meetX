@@ -16,7 +16,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
    ```
    MONGODB_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
-   PORT=5000
+   PORT=3000
    ```
 4. **Start the server**
    ```
@@ -28,7 +28,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ## API Endpoints & User Flow
 
 ### 1. **Sign Up**
-- **Endpoint:** `POST /api/auth/register`
+- **Endpoint:** `POST http://localhost:3000/api/users/register`
 - **Body:**
   ```json
   {
@@ -43,7 +43,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 2. **Login**
-- **Endpoint:** `POST /api/auth/login`
+- **Endpoint:** `POST http://localhost:3000/api/users/login`
 - **Body:**
   ```json
   {
@@ -62,10 +62,10 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 3. **Get All Activities**
-- **Endpoint:** `GET /api/activities`
+- **Endpoint:** `GET http://localhost:3000/api/activities`
 - **Response:** List of activities
 
-**Sample Activities:(saved in mongodb cloud)**
+**Sample Activities:**
 | Activity ID                        | Title                   |
 |-------------------------------------|-------------------------|
 | 681deca7fb472fca85938b57           | Cricket Match           |
@@ -84,7 +84,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 4. **Book an Activity**
-- **Endpoint:** `POST /api/bookings/book`
+- **Endpoint:** `POST http://localhost:3000/api/bookings`
 - **Headers:**  
   `Authorization: Bearer YOUR_JWT_TOKEN_HERE`
 - **Body:**
@@ -98,7 +98,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 5. **See My Bookings**
-- **Endpoint:** `GET /api/bookings/my-bookings`
+- **Endpoint:** `GET http://localhost:3000/api/bookings/my`
 - **Headers:**  
   `Authorization: Bearer YOUR_JWT_TOKEN_HERE`
 - **Response:** List of your booked activities
