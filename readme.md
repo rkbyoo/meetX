@@ -20,7 +20,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
    ```
 4. **Start the server**
    ```
-   npm start
+   npm run dev
    ```
 
 ---
