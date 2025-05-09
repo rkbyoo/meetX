@@ -1,11 +1,14 @@
 # MeetX Backend
 
+> **Hosted API URL for Testing:**  
+> [https://meetx-2xde.onrender.com/](https://meetx-2xde.onrender.com/)
+
 A simple backend for MeetX, an event/activity booking platform.  
 This backend allows users to sign up, log in, view all activities, book an activity, and see their bookings.
 
 ---
 
-## Setup Instructions
+## Setup Instructions (For Local Development)
 
 1. **Clone the repository**
 2. **Install dependencies**
@@ -27,8 +30,10 @@ This backend allows users to sign up, log in, view all activities, book an activ
 
 ## API Endpoints & User Flow
 
+> **For testing, replace `http://localhost:3000` with `https://meetx-2xde.onrender.com` in all endpoints below.**
+
 ### 1. **Sign Up**
-- **Endpoint:** `POST http://localhost:3000/api/users/register`
+- **Endpoint:** `POST https://meetx-2xde.onrender.com/api/users/register`
 - **Body:**
   ```json
   {
@@ -43,7 +48,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 2. **Login**
-- **Endpoint:** `POST http://localhost:3000/api/users/login`
+- **Endpoint:** `POST https://meetx-2xde.onrender.com/api/users/login`
 - **Body:**
   ```json
   {
@@ -62,7 +67,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 3. **Get All Activities**
-- **Endpoint:** `GET http://localhost:3000/api/activities`
+- **Endpoint:** `GET https://meetx-2xde.onrender.com/api/activities`
 - **Response:** List of activities
 
 **Sample Activities:**
@@ -84,7 +89,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 4. **Book an Activity**
-- **Endpoint:** `POST http://localhost:3000/api/bookings`
+- **Endpoint:** `POST https://meetx-2xde.onrender.com/api/bookings`
 - **Headers:**  
   `Authorization: Bearer YOUR_JWT_TOKEN_HERE`
 - **Body:**
@@ -98,7 +103,7 @@ This backend allows users to sign up, log in, view all activities, book an activ
 ---
 
 ### 5. **See My Bookings**
-- **Endpoint:** `GET http://localhost:3000/api/bookings/my`
+- **Endpoint:** `GET https://meetx-2xde.onrender.com/api/bookings/my`
 - **Headers:**  
   `Authorization: Bearer YOUR_JWT_TOKEN_HERE`
 - **Response:** List of your booked activities
@@ -107,9 +112,10 @@ This backend allows users to sign up, log in, view all activities, book an activ
 
 ## Notes
 
-- **.env file is required** for database and JWT configuration.
+- **.env file is required** for database and JWT configuration (for local development).
 - **Always pass the JWT token** in the `Authorization` header as `Bearer <token>` for booking and viewing your bookings.
 - **Test endpoints using Postman** or any API client.
+- **CORS is enabled** for easy frontend and Postman testing.
 
 ---
 
